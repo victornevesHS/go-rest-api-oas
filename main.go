@@ -2,21 +2,17 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http" //responsável por lidar com requisições HTTP
+
+	"github.com/victornevesHS/go-rest-api-oas/models"
+	"github.com/victornevesHS/go-rest-api-oas/routes"
 )
 
-func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Home page")
-}
-
-func HnadleRequests() {
-	http.HandleFunc("/", Home)
-	log.Fatal(http.ListenAndServe(":8000", nil))
-
-}
-
 func main() {
+	models.Personalidades = []models.Personalidade{
+		{Nome: "Albert Einstein", Historia: "Físico alemão"},
+		{Nome: "Isaac Newton", Historia: "Físico e matemático inglês"},
+	}
+
 	fmt.Println("iniciando o servidor...")
-	HnadleRequests()
+	routes.HnadleRequests()
 }
