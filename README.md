@@ -1,4 +1,5 @@
-# Base model of an API for implementation and testing
+# Basic model of an api made in GO
+![image](https://github.com/user-attachments/assets/c37cb7de-486a-445a-a71f-09a290c29bc5)
 
 
 ## For what?
